@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/linkscraper",
+  "version": "1.1.12",
+  "description": "Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/linkscraper-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "link scraper", "link scraper api", "link scraping api", "link scraper tool", "link scraping tool"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/linkscraper-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/linkscraper?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
