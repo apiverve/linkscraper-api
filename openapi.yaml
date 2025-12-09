@@ -1,0 +1,126 @@
+openapi: 3.0.4
+info:
+  title: Link Scraper
+  description: Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/linkscraper:
+    post:
+      summary: Scrape Links
+      description: Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.
+      operationId: linkscraper
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  url: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+                  linkCount: 16
+                  links:
+                  - text: ''
+                    href: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/pdfs/AWSEC2/latest/UserGuide/ec2-ug.pdf#concepts
+                    external: false
+                  - text: Documentation
+                    href: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html
+                    external: false
+                  - text: Amazon EC2
+                    href: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/ec2/index.html
+                    external: false
+                  - text: User Guide
+                    href: concepts.html
+                    external: true
+                  - text: Amazon EC2 Instance Types Guide
+                    href: https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html
+                    external: true
+                  - text: PCI DSS Level 1
+                    href: https://aws.amazon.com/compliance/pci-dss-level-1-faqs/
+                    external: true
+                  - text: Amazon EC2 Auto Scaling
+                    href: https://docs.aws.amazon.com/autoscaling/
+                    external: true
+                  - text: AWS Backup
+                    href: https://docs.aws.amazon.com/aws-backup/
+                    external: true
+                  - text: Amazon CloudWatch
+                    href: https://docs.aws.amazon.com/cloudwatch/
+                    external: true
+                  - text: Elastic Load Balancing
+                    href: https://docs.aws.amazon.com/elasticloadbalancing/
+                    external: true
+                  - text: Amazon GuardDuty
+                    href: https://docs.aws.amazon.com/guardduty/
+                    external: true
+                  - text: EC2 Image Builder
+                    href: https://docs.aws.amazon.com/imagebuilder/
+                    external: true
+                  - text: AWS Launch Wizard
+                    href: https://docs.aws.amazon.com/launchwizard/
+                    external: true
+                  - text: AWS Systems Manager
+                    href: https://docs.aws.amazon.com/systems-manager/
+                    external: true
+                  - text: Amazon Lightsail
+                    href: https://docs.aws.amazon.com/lightsail/
+                    external: true
+                  - text: Amazon Lightsail or Amazon EC2
+                    href: https://docs.aws.amazon.com/decision-guides/latest/lightsail-or-ec2/lightsail-or-ec2.html
+                    external: true
+                  maxLinksReached: false
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  description: The URL of the web page to scrape links from
+                  example: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+              required:
+              - url
+              example:
+                url: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+                maxlinks: 20
+                includequery: false
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
