@@ -12,14 +12,8 @@ public class BasicExample {
         LinkScraperAPIClient client = new LinkScraperAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;url&quot;, &quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html&quot;);
-        parameters.put(&quot;maxlinks&quot;, 20);
-        parameters.put(&quot;includequery&quot;, false);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
