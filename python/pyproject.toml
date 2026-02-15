@@ -1,17 +1,20 @@
 [project]
 name = "apiverve-linkscraper"
-version = "1.1.12"
+version = "1.1.13"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
 description = "Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page."
-keywords = ["link scraper", "link scraper api", "link scraping api", "link scraper tool", "link scraping tool"]
+keywords = []
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
+license = "MIT"
+dependencies = [
+    "requests>=2.25.0"
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
