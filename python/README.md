@@ -44,7 +44,11 @@ from apiverve_linkscraper.apiClient import LinkscraperAPIClient
 # Initialize the client with your APIVerve API key
 api = LinkscraperAPIClient("[YOUR_API_KEY]")
 
-query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
 ```
 
 ###### Simple Request
@@ -204,7 +212,11 @@ from apiverve_linkscraper.apiClient import LinkscraperAPIClient, LinkscraperAPIC
 
 api = LinkscraperAPIClient("[YOUR_API_KEY]")
 
-query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
 
 try:
     result = api.execute(query)
@@ -225,7 +237,11 @@ from apiverve_linkscraper.apiClient import LinkscraperAPIClient, LinkscraperAPIC
 
 api = LinkscraperAPIClient("[YOUR_API_KEY]")
 
-query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
 
 try:
     result = api.execute(query)
@@ -259,7 +275,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_linkscraper.apiClient import LinkscraperAPIClient, LinkscraperAPIClientError
 
-query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
 
 # Using context manager ensures proper cleanup
 with LinkscraperAPIClient("[YOUR_API_KEY]") as api:
@@ -285,7 +305,11 @@ from apiverve_linkscraper.apiClient import LinkscraperAPIClient
 # Enable debug mode
 api = LinkscraperAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -300,8 +324,13 @@ from apiverve_linkscraper.apiClient import LinkscraperAPIClient
 
 api = LinkscraperAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "maxlinks": 20,
+    "includequery": false
+}
+
 try:
-    query = { "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", "maxlinks": 20, "includequery": false }
     result = api.execute(query)
     print(result)
 finally:
