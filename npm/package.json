@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/linkscraper",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.",
   "main": "index.js",
   "types": "index.d.ts",
