@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:linkscraper-api:1.1.13'
+    implementation 'com.github.apiverve:linkscraper-api:1.1.14'
 }
 ```
 
@@ -47,9 +47,9 @@ LinkScraperAPIClient client = new LinkScraperAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("url", "");
-    parameters.put("maxlinks", 50);
-    parameters.put("includequery", true);
+    parameters.put("url", "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html");
+    parameters.put("maxlinks", 20);
+    parameters.put("includequery", false);
 
     // Execute the request
     APIResponse response = client.execute(parameters);
