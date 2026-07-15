@@ -4,25 +4,40 @@ declare module '@apiverve/linkscraper' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface linkscraperResponse {
     status: string;
     error: string | null;
     data: LinkScraperData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface LinkScraperData {
-      url:             string;
-      linkCount:       number;
-      links:           Link[];
-      maxLinksReached: boolean;
+      url:               null | string;
+      linkCount:         number | null;
+      externalLinkCount: number | null;
+      internalLinkCount: number | null;
+      links:             Link[];
+      uniqueDomains:     (null | string)[];
+      maxLinksReached:   boolean | null;
   }
   
   interface Link {
-      text:     string;
-      href:     string;
-      external: boolean;
+      text:     null | string;
+      href:     null | string;
+      external: boolean | null;
   }
 
   export default class linkscraperWrapper {
