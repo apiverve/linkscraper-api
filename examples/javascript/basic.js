@@ -9,15 +9,24 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/linkscraper';
 
 /**
- * Make a GET request to the Link Scraper API
+ * Make a POST request to the Link Scraper API
  */
 async function callLinkScraperAPI() {
   try {
+    // Request body
+    const requestBody &#x3D; {
+    &quot;url&quot;: &quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html&quot;,
+    &quot;maxlinks&quot;: 20,
+    &quot;includequery&quot;: false
+};
+
     const response = await fetch(API_URL, {
-      method: 'GET',
+      method: 'POST',
       headers: {
-        'x-api-key': API_KEY
-      }
+        'x-api-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
     });
 
     // Check if response is successful
