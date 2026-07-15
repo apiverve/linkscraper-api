@@ -130,26 +130,13 @@ async function makeRequest() {
   "data": {
     "url": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     "linkCount": 16,
+    "externalLinkCount": 13,
+    "internalLinkCount": 3,
     "links": [
-      {
-        "text": "",
-        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/pdfs/AWSEC2/latest/UserGuide/ec2-ug.pdf#concepts",
-        "external": false
-      },
       {
         "text": "Documentation",
         "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html",
         "external": false
-      },
-      {
-        "text": "Amazon EC2",
-        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/ec2/index.html",
-        "external": false
-      },
-      {
-        "text": "User Guide",
-        "href": "concepts.html",
-        "external": true
       },
       {
         "text": "Amazon EC2 Instance Types Guide",
@@ -157,60 +144,14 @@ async function makeRequest() {
         "external": true
       },
       {
-        "text": "PCI DSS Level 1",
-        "href": "https://aws.amazon.com/compliance/pci-dss-level-1-faqs/",
-        "external": true
-      },
-      {
         "text": "Amazon EC2 Auto Scaling",
         "href": "https://docs.aws.amazon.com/autoscaling/",
         "external": true
-      },
-      {
-        "text": "AWS Backup",
-        "href": "https://docs.aws.amazon.com/aws-backup/",
-        "external": true
-      },
-      {
-        "text": "Amazon CloudWatch",
-        "href": "https://docs.aws.amazon.com/cloudwatch/",
-        "external": true
-      },
-      {
-        "text": "Elastic Load Balancing",
-        "href": "https://docs.aws.amazon.com/elasticloadbalancing/",
-        "external": true
-      },
-      {
-        "text": "Amazon GuardDuty",
-        "href": "https://docs.aws.amazon.com/guardduty/",
-        "external": true
-      },
-      {
-        "text": "EC2 Image Builder",
-        "href": "https://docs.aws.amazon.com/imagebuilder/",
-        "external": true
-      },
-      {
-        "text": "AWS Launch Wizard",
-        "href": "https://docs.aws.amazon.com/launchwizard/",
-        "external": true
-      },
-      {
-        "text": "AWS Systems Manager",
-        "href": "https://docs.aws.amazon.com/systems-manager/",
-        "external": true
-      },
-      {
-        "text": "Amazon Lightsail",
-        "href": "https://docs.aws.amazon.com/lightsail/",
-        "external": true
-      },
-      {
-        "text": "Amazon Lightsail or Amazon EC2",
-        "href": "https://docs.aws.amazon.com/decision-guides/latest/lightsail-or-ec2/lightsail-or-ec2.html",
-        "external": true
       }
+    ],
+    "uniqueDomains": [
+      "docs.aws.amazon.com",
+      "aws.amazon.com"
     ],
     "maxLinksReached": false
   }
