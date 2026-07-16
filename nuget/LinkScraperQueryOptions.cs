@@ -20,12 +20,12 @@ namespace APIVerve.API.LinkScraper
         /// Maximum number of links to scrape and return
         /// </summary>
         [JsonProperty("maxlinks")]
-        public string Maxlinks { get; set; }
+        public double Maxlinks { get; set; }
 
         /// <summary>
         /// Include query strings in the scraped links
         /// </summary>
         [JsonProperty("includequery")]
-        public string Includequery { get; set; }
+        public bool? Includequery { get; set; }
     }
 }
