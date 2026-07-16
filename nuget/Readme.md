@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.LinkScraper;
 
 class Program
 {
@@ -60,7 +60,7 @@ class Program
         // Initialize the API client
         var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -118,7 +118,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.LinkScraper;
 
 public class Example
 {
@@ -126,7 +126,7 @@ public class Example
     {
         var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -152,7 +152,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.LinkScraper;
 
 public class Example
 {
@@ -160,7 +160,7 @@ public class Example
     {
         var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -191,7 +191,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.LinkScraper;
 
 public class Example
 {
@@ -199,7 +199,7 @@ public class Example
     {
         var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -245,7 +245,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.LinkScraper;
 
 public class Example
 {
@@ -257,7 +257,7 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -300,7 +300,7 @@ var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
+var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -328,7 +328,7 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
+var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -348,7 +348,7 @@ var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
+var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -362,7 +362,7 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
+var queryOptions = new LinkScraperQueryOptions {
     url = "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     maxlinks = 20,
     includequery = false
@@ -387,26 +387,13 @@ using (var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]"))
   "data": {
     "url": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     "linkCount": 16,
+    "externalLinkCount": 13,
+    "internalLinkCount": 3,
     "links": [
-      {
-        "text": "",
-        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/pdfs/AWSEC2/latest/UserGuide/ec2-ug.pdf#concepts",
-        "external": false
-      },
       {
         "text": "Documentation",
         "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html",
         "external": false
-      },
-      {
-        "text": "Amazon EC2",
-        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/ec2/index.html",
-        "external": false
-      },
-      {
-        "text": "User Guide",
-        "href": "concepts.html",
-        "external": true
       },
       {
         "text": "Amazon EC2 Instance Types Guide",
@@ -414,60 +401,14 @@ using (var apiClient = new LinkScraperAPIClient("[YOUR_API_KEY]"))
         "external": true
       },
       {
-        "text": "PCI DSS Level 1",
-        "href": "https://aws.amazon.com/compliance/pci-dss-level-1-faqs/",
-        "external": true
-      },
-      {
         "text": "Amazon EC2 Auto Scaling",
         "href": "https://docs.aws.amazon.com/autoscaling/",
         "external": true
-      },
-      {
-        "text": "AWS Backup",
-        "href": "https://docs.aws.amazon.com/aws-backup/",
-        "external": true
-      },
-      {
-        "text": "Amazon CloudWatch",
-        "href": "https://docs.aws.amazon.com/cloudwatch/",
-        "external": true
-      },
-      {
-        "text": "Elastic Load Balancing",
-        "href": "https://docs.aws.amazon.com/elasticloadbalancing/",
-        "external": true
-      },
-      {
-        "text": "Amazon GuardDuty",
-        "href": "https://docs.aws.amazon.com/guardduty/",
-        "external": true
-      },
-      {
-        "text": "EC2 Image Builder",
-        "href": "https://docs.aws.amazon.com/imagebuilder/",
-        "external": true
-      },
-      {
-        "text": "AWS Launch Wizard",
-        "href": "https://docs.aws.amazon.com/launchwizard/",
-        "external": true
-      },
-      {
-        "text": "AWS Systems Manager",
-        "href": "https://docs.aws.amazon.com/systems-manager/",
-        "external": true
-      },
-      {
-        "text": "Amazon Lightsail",
-        "href": "https://docs.aws.amazon.com/lightsail/",
-        "external": true
-      },
-      {
-        "text": "Amazon Lightsail or Amazon EC2",
-        "href": "https://docs.aws.amazon.com/decision-guides/latest/lightsail-or-ec2/lightsail-or-ec2.html",
-        "external": true
       }
+    ],
+    "uniqueDomains": [
+      "docs.aws.amazon.com",
+      "aws.amazon.com"
     ],
     "maxLinksReached": false
   }
