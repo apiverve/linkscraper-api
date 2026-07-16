@@ -201,11 +201,53 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Link Scraper API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "url": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "linkCount": 16,
+    "externalLinkCount": 13,
+    "internalLinkCount": 3,
+    "links": [
+      {
+        "text": "Documentation",
+        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html",
+        "external": false
+      },
+      {
+        "text": "Amazon EC2 Instance Types Guide",
+        "href": "https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html",
+        "external": true
+      },
+      {
+        "text": "Amazon EC2 Auto Scaling",
+        "href": "https://docs.aws.amazon.com/autoscaling/",
+        "external": true
+      }
+    ],
+    "uniqueDomains": [
+      "docs.aws.amazon.com",
+      "aws.amazon.com"
+    ],
+    "maxLinksReached": false
+  }
 }
 ```
 
