@@ -25,6 +25,9 @@ namespace APIVerve.API.LinkScraper
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,13 +36,22 @@ namespace APIVerve.API.LinkScraper
         public Uri Url { get; set; }
 
         [JsonProperty("linkCount")]
-        public long LinkCount { get; set; }
+        public long? LinkCount { get; set; }
+
+        [JsonProperty("externalLinkCount")]
+        public long? ExternalLinkCount { get; set; }
+
+        [JsonProperty("internalLinkCount")]
+        public long? InternalLinkCount { get; set; }
 
         [JsonProperty("links")]
         public Link[] Links { get; set; }
 
+        [JsonProperty("uniqueDomains")]
+        public string[] UniqueDomains { get; set; }
+
         [JsonProperty("maxLinksReached")]
-        public bool MaxLinksReached { get; set; }
+        public bool? MaxLinksReached { get; set; }
     }
 
     public partial class Link
@@ -48,9 +60,21 @@ namespace APIVerve.API.LinkScraper
         public string Text { get; set; }
 
         [JsonProperty("href")]
-        public string Href { get; set; }
+        public Uri Href { get; set; }
 
         [JsonProperty("external")]
-        public bool External { get; set; }
+        public bool? External { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
