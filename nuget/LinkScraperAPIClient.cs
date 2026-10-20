@@ -68,7 +68,7 @@ namespace APIVerve.API.LinkScraper
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "url", new ValidationRule { Type = "string", Required = true, Format = "url" } },
-            { "maxlinks", new ValidationRule { Type = "number", Required = true } },
+            { "maxlinks", new ValidationRule { Type = "number", Required = false } },
             { "includequery", new ValidationRule { Type = "boolean", Required = false } }
         };
 
