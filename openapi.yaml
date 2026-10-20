@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Link Scraper
   description: >-
-    Link Scraper is a simple tool for scraping web page links. It returns all
-    the links on a web page.
+    Link Scraper is a website link extractor API that pulls internal and
+    external links from any webpage URL in real time. It resolves relative paths
+    to absolute URLs, strips empty fragments, and returns anchor text with
+    internal and external counts.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/linkscraper:
     post:
-      summary: Scrape Links
+      summary: Link Scraper
       description: Scrape all the links on a web page
       operationId: linkscraper
       parameters: []
@@ -43,19 +45,16 @@ paths:
                 status: ok
                 error: null
                 data:
-                  url: >-
-                    http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+                  url: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
                   linkCount: 16
                   externalLinkCount: 13
                   internalLinkCount: 3
                   links:
                     - text: Documentation
-                      href: >-
-                        http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html
+                      href: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html
                       external: false
                     - text: Amazon EC2 Instance Types Guide
-                      href: >-
-                        https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html
+                      href: https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html
                       external: true
                     - text: Amazon EC2 Auto Scaling
                       href: https://docs.aws.amazon.com/autoscaling/
@@ -88,7 +87,6 @@ paths:
                   description: Include query strings in the scraped links
               required:
                 - url
-                - maxlinks
 components:
   securitySchemes:
     api_key:
