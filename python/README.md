@@ -1,13 +1,12 @@
 Link Scraper API
 ============
 
-Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.
+Link Scraper is a website link extractor API that pulls internal and external links from any webpage URL in real time. It resolves relative paths to absolute URLs, strips empty fragments, and returns anchor text with internal and external counts.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Link Scraper API](https://linkscraper.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-linkscraper.svg)](https://pypi.org/project/apiverve-linkscraper/)
+
+This is a Python wrapper for the [Link Scraper API](https://apiverve.com/marketplace/linkscraper?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-linkscraper
 
 ## Configuration
 
-Before using the linkscraper API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Link Scraper API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -64,7 +63,7 @@ except Exception as e:
 
 ## Usage
 
-The Link Scraper API documentation is found here: [https://docs.apiverve.com/ref/linkscraper](https://docs.apiverve.com/ref/linkscraper?utm_source=pypi&utm_medium=readme).
+The Link Scraper API documentation is found here: [https://docs.apiverve.com/ref/linkscraper](https://docs.apiverve.com/ref/linkscraper?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -112,26 +111,13 @@ print(result)
   "data": {
     "url": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     "linkCount": 16,
+    "externalLinkCount": 13,
+    "internalLinkCount": 3,
     "links": [
-      {
-        "text": "",
-        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/pdfs/AWSEC2/latest/UserGuide/ec2-ug.pdf#concepts",
-        "external": false
-      },
       {
         "text": "Documentation",
         "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/index.html",
         "external": false
-      },
-      {
-        "text": "Amazon EC2",
-        "href": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html/ec2/index.html",
-        "external": false
-      },
-      {
-        "text": "User Guide",
-        "href": "concepts.html",
-        "external": true
       },
       {
         "text": "Amazon EC2 Instance Types Guide",
@@ -139,60 +125,14 @@ print(result)
         "external": true
       },
       {
-        "text": "PCI DSS Level 1",
-        "href": "https://aws.amazon.com/compliance/pci-dss-level-1-faqs/",
-        "external": true
-      },
-      {
         "text": "Amazon EC2 Auto Scaling",
         "href": "https://docs.aws.amazon.com/autoscaling/",
         "external": true
-      },
-      {
-        "text": "AWS Backup",
-        "href": "https://docs.aws.amazon.com/aws-backup/",
-        "external": true
-      },
-      {
-        "text": "Amazon CloudWatch",
-        "href": "https://docs.aws.amazon.com/cloudwatch/",
-        "external": true
-      },
-      {
-        "text": "Elastic Load Balancing",
-        "href": "https://docs.aws.amazon.com/elasticloadbalancing/",
-        "external": true
-      },
-      {
-        "text": "Amazon GuardDuty",
-        "href": "https://docs.aws.amazon.com/guardduty/",
-        "external": true
-      },
-      {
-        "text": "EC2 Image Builder",
-        "href": "https://docs.aws.amazon.com/imagebuilder/",
-        "external": true
-      },
-      {
-        "text": "AWS Launch Wizard",
-        "href": "https://docs.aws.amazon.com/launchwizard/",
-        "external": true
-      },
-      {
-        "text": "AWS Systems Manager",
-        "href": "https://docs.aws.amazon.com/systems-manager/",
-        "external": true
-      },
-      {
-        "text": "Amazon Lightsail",
-        "href": "https://docs.aws.amazon.com/lightsail/",
-        "external": true
-      },
-      {
-        "text": "Amazon Lightsail or Amazon EC2",
-        "href": "https://docs.aws.amazon.com/decision-guides/latest/lightsail-or-ec2/lightsail-or-ec2.html",
-        "external": true
       }
+    ],
+    "uniqueDomains": [
+      "docs.aws.amazon.com",
+      "aws.amazon.com"
     ],
     "maxLinksReached": false
   }
@@ -342,7 +282,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -353,12 +293,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
