@@ -30,7 +30,7 @@ class linkscraperWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/linkscraper';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"url":{"type":"string","required":true,"format":"url"},"maxlinks":{"type":"number","required":true,"default":"50"},"includequery":{"type":"boolean","required":false,"default":false}};
+        this.validationRules = {"url":{"type":"string","required":true,"format":"url"},"maxlinks":{"type":"number","required":false,"default":"50"},"includequery":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
