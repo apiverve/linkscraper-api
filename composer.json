@@ -1,7 +1,7 @@
 {
     "name": "apiverve/linkscraper",
-    "description": "Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.",
-    "version": "1.2.0",
+    "description": "Link Scraper is a website link extractor API that pulls internal and external links from any webpage URL in real time. It resolves relative paths to absolute URLs, strips empty fragments, and returns anchor text with internal and external counts.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "linkscraper",
-        "link scraper",
         "link scraper api",
-        "link scraping api",
-        "link scraper tool",
-        "link scraping tool"
+        "website link extractor api",
+        "link extractor api",
+        "web scraping api for links",
+        "extract links from url"
     ],
-    "homepage": "https://linkscraper.apiverve.com?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/linkscraper?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/linkscraper",
