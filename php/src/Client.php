@@ -19,7 +19,7 @@ use APIVerve\Linkscraper\Exceptions\ValidationException;
  * print_r($response);
  * ```
  *
- * @see https://linkscraper.apiverve.com?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/linkscraper?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
@@ -35,7 +35,7 @@ class Client
      */
     private const VALIDATION_RULES = [
         'url' => ['type' => 'string', 'required' => true, 'format' => 'url'],
-        'maxlinks' => ['type' => 'number', 'required' => true],
+        'maxlinks' => ['type' => 'number', 'required' => false],
         'includequery' => ['type' => 'boolean', 'required' => false]
     ];
 

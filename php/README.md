@@ -1,6 +1,6 @@
 # Link Scraper API - PHP Package
 
-Link Scraper is a simple tool for scraping web page links. It returns all the links on a web page.
+Link Scraper is a website link extractor API that pulls internal and external links from any webpage URL in real time. It resolves relative paths to absolute URLs, strips empty fragments, and returns anchor text with internal and external counts.
 
 ## Installation
 
@@ -110,11 +110,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/linkscraper?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/linkscraper?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://linkscraper.apiverve.com?utm_source=php&utm_medium=readme](https://linkscraper.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/linkscraper?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/linkscraper?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
