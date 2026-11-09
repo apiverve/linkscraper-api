@@ -1,0 +1,16 @@
+name: apiverve_linkscraper
+description: "Link Scraper is a website link extractor API that pulls internal and external links from any webpage URL in real time. It resolves relative paths to absolute URLs, strips empty fragments, and returns anchor text with internal and external counts."
+version: 1.2.5
+homepage: https://apiverve.com/marketplace/linkscraper?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/linkscraper-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
